@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	size_t i = 0;
 	va_list args;
-	char str[3000] = "", temp[2] = "";
+	char str[2500] = "", temp[2] = "";
 
 
 	va_start(args, format);
