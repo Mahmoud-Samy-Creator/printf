@@ -6,13 +6,6 @@
  * Return: string
  */
 
-int nulling(char *format)
-{
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-	{
-		return (-1);
-	}
-}
 int _printf(const char *format, ...)
 {
 	size_t i = 0;
@@ -20,7 +13,7 @@ int _printf(const char *format, ...)
 	char str[2500] = "", temp[2] = "";
 
 	va_start(args, format);
-	if (nulling(format) == -1)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	for (i = 0 ; format[i] ; i++)
