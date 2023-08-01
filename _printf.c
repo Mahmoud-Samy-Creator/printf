@@ -21,6 +21,19 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
+	if (format[0] == '%' && format[1] == 'c')
+	{
+		char *ch = malloc(1);
+
+		if (ch == NULL)
+			return (0);
+
+		ch[0] = va_arg(args, int);
+
+		if (strlen(ch) == 0)
+			return (1);
+	}
+
 	for (i = 0 ; format[i] ; i++)
 	{
 		if (format[i] == '%')
