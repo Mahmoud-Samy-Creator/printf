@@ -14,11 +14,16 @@ int _printf(const char *format, ...)
 	size_t len = 0;
 
 	va_start(args, format);
+
+	if (special(format, args) == -1)
+		return (-1);
+	/*
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		va_end(args);
 		return (-1);
 	}
+	*/
 
 	for (i = 0 ; format[i] ; i++)
 	{
