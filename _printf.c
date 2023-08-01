@@ -11,8 +11,7 @@ int _printf(const char *format, ...)
 	size_t i = 0;
 	va_list args;
 	char str[5000] = "", temp[2] = "";
-	// size_t len = 0;
-	size_t nwr = 0;
+	size_t len = 0;
 
 	va_start(args, format);
 	if (format != NULL)
@@ -31,8 +30,8 @@ int _printf(const char *format, ...)
 				{
 					char *ch = print_char(args);
 
-					// if (strlen(ch) == 0)
-					// 	len++;
+					if (strlen(ch) == 0)
+						len++;
 
 					strcat(str, ch);
 					i++;
@@ -68,6 +67,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	va_end(args);
-	nwr = write(1, str, strlen(str));
-	return (nwr);
+	write(1, str, strlen(str));
+	return (strlen(str) + len);
 }
