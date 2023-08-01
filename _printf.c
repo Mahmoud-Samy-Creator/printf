@@ -31,7 +31,10 @@ int _printf(const char *format, ...)
 		ch[0] = va_arg(args, int);
 
 		if (strlen(ch) == 0)
+		{
+			write(1, ch, 1);
 			return (1);
+		}
 	}
 
 	for (i = 0 ; format[i] ; i++)
