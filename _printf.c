@@ -63,7 +63,7 @@ int _printf(const char *format, ...)
 			temp[1] = '\0';
 			strcat(str, temp);
 		}
-}
+	}
 	va_end(args);
 	write(1, str, strlen(str));
 	return (strlen(str) + len);
