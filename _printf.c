@@ -20,16 +20,16 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
+	if (format[0] == '%' && format[1] == '\0')
+	{
+		va_end(args);
+		return (-1);
+	}
+
 	for (i = 0 ; format[i] ; i++)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-			{
-				va_end(args);
-				return (-1);
-			}
-
 			if (format[i + 1] == 'c')
 			{
 				char *ch = print_char(args);
