@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	size_t i = 0;
 	va_list args;
 	char str[4000] = "", temp[2] = "";
-	size_t len = 0;
+
 
 	va_start(args, format);
 
@@ -27,12 +27,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				char *ch = print_char(args);
-
-				if (strlen(ch) == 0)
-					len++;
-
-				strcat(str, ch);
+				strcat(str, print_char(args));
 				i++;
 			}
 			else if (format[i + 1] == 's')
@@ -61,5 +56,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	write(1, str, strlen(str));
-	return (strlen(str) + len);
+	return (strlen(str));
 }
