@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	char str[5000] = "", temp[2] = "";
 	size_t len = 0;
+	size_t nwr = 0;
 
 	va_start(args, format);
 	if (format != NULL)
@@ -67,6 +68,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	va_end(args);
-	write(1, str, strlen(str));
-	return (strlen(str) + len);
+	nwr = write(1, str, strlen(str));
+	return (nwr);
 }
