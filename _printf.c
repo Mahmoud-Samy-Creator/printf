@@ -14,44 +14,41 @@ int _printf(const char *format, ...)
 	size_t len = 0;
 
 	va_start(args, format);
-	if (format != NULL)
+	if (format == NULL)
 	{
-		for (i = 0 ; format[i] ; i++)
+		va_end(args);
+		return (-1);
+	}
+
+	for (i = 0 ; format[i] ; i++)
+	{
+		if (format[i] == '%')
 		{
-			if (format[i] == '%')
+			if (format[i + 1] == '\0')
 			{
-				if (format[i + 1] == '\0')
-				{
-					va_end(args);
-					return (-1);
-				}
+				va_end(args);
+				return (-1);
+			}
 
-				if (format[i + 1] == 'c')
-				{
-					char *ch = print_char(args);
+			if (format[i + 1] == 'c')
+			{
+				char *ch = print_char(args);
 
-					if (strlen(ch) == 0)
-						len++;
+				if (strlen(ch) == 0)
+					len++;
 
-					strcat(str, ch);
-					i++;
-				}
-				else if (format[i + 1] == 's')
-				{
-					strcat(str, print_str(args));
-					i++;
-				}
-				else if (format[i + 1] == '%')
-				{
-					strcat(str, "%");
-					i++;
-				}
-				else
-				{
-					temp[0] = format[i];
-					temp[1] = '\0';
-					strcat(str, temp);
-				}
+				strcat(str, ch);
+				i++;
+			}
+			else if (format[i + 1] == 's')
+			{
+				strcat(str, print_str(args));
+				i++;
+			}
+			else if (format[i + 1] == '%')
+			{
+				strcat(str, "%");
+				i++;
 			}
 			else
 			{
@@ -60,12 +57,13 @@ int _printf(const char *format, ...)
 				strcat(str, temp);
 			}
 		}
-	}
-	else
-	{
-		va_end(args);
-		return (-1);
-	}
+		else
+		{
+			temp[0] = format[i];
+			temp[1] = '\0';
+			strcat(str, temp);
+		}
+}
 	va_end(args);
 	write(1, str, strlen(str));
 	return (strlen(str) + len);
