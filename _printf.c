@@ -14,17 +14,7 @@ int _printf(const char *format, ...)
 	size_t len = 0;
 
 	va_start(args, format);
-	if (format == NULL)
-	{
-		va_end(args);
-		return (-1);
-	}
-
-	if (format[0] == '%' && format[1] == '\0')
-	{
-		va_end(args);
-		return (-1);
-	}
+	special(format, args);
 
 	for (i = 0 ; format[i] ; i++)
 	{
