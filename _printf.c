@@ -12,9 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	char str[2500] = "", temp[2] = "";
 
-
 	va_start(args, format);
-
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		va_end(args);
