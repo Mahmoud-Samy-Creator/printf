@@ -10,7 +10,9 @@ int _printf(const char *format, ...)
 {
 	size_t i = 0;
 	va_list args;
-	char str[2500] = "", temp[2] = "";
+	char str[2500] = "";
+	char temp[2] = "";
+	int len = 0;
 
 	va_start(args, format);
 
@@ -24,16 +26,20 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == 'c')
 			{
 				strcat(str, print_char(args));
+				len++;
 				i++;
 			}
 			else if (format[i + 1] == 's')
 			{
-				strcat(str, print_str(args));
+				char *string = print_str(args); 
+				strcat(str, string);
+				len += strlen(string);
 				i++;
 			}
 			else if (format[i + 1] == '%')
 			{
 				strcat(str, "%");
+				len++;
 				i++;
 			}
 			else
@@ -41,6 +47,7 @@ int _printf(const char *format, ...)
 				temp[0] = format[i];
 				temp[1] = '\0';
 				strcat(str, temp);
+				len++;
 			}
 		}
 		else
@@ -48,9 +55,10 @@ int _printf(const char *format, ...)
 			temp[0] = format[i];
 			temp[1] = '\0';
 			strcat(str, temp);
+			len++;
 		}
 	}
 	va_end(args);
 	write(1, str, strlen(str));
-	return (strlen(str));
+	return (len);
 }
