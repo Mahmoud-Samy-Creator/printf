@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 {
 	size_t i = 0;
 	va_list args;
+	char *ch = malloc(2);
 	char str[2500] = "", temp[2] = "";
 
 	va_start(args, format);
@@ -23,7 +24,8 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				strcat(str, print_char(args));
+				ch = print_char(args);
+				strcat(str, ch);
 				i++;
 			}
 			else if (format[i + 1] == 's')
@@ -51,6 +53,7 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
+	free(ch);
 	write(1, str, strlen(str));
 	return (strlen(str));
 }
