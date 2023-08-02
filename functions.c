@@ -7,12 +7,13 @@
  */
 char *print_char(va_list args)
 {
-	char *ch = malloc(1);
+	char *ch = malloc(2);
 
 	if (ch == NULL)
 		return (NULL);
 
 	ch[0] = va_arg(args, int);
+	ch[1] = '\0';
 
 	return (ch);
 }
