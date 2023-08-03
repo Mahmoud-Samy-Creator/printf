@@ -22,18 +22,22 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] == 'c')
+			if (format[i + 1] == 'c')
+			{
 				len += print_char(args);
-
-			else if (format[i] == '%')
+				i++;
+			}
+			else if (format[i + 1] == '%')
 			{
 				write(1, "%", 1);
+				i++;
 				len++;
 			}
-			else if (format[i] == 's')
+			else if (format[i + 1] == 's')
+			{
 				len += print_str(args);
-
+				i++;
+			}
 			else
 			{
 				temp[0] = format[i];
@@ -43,7 +47,9 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
+		{
 			len += print_statments(format[i]);
+		}
 	}
 	va_end(args);
 	return (len);
