@@ -35,3 +35,19 @@ int print_str(va_list args)
 
 	return (strlen(str));
 }
+
+/**
+ * print_statments - A function for printing a statment
+ * @format: a char to print
+ * Return: 1
+*/
+
+int print_statments(char format)
+{
+	char temp[2] = "";
+	
+	temp[0] = format;
+	temp[1] = '\0';
+	write(1, temp, 1);
+	return (1);
+}
