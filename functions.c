@@ -49,3 +49,19 @@ int print_statments(char format)
 	write(1, temp, 1);
 	return (1);
 }
+
+/**
+ * print_percent - A function for handling persent
+ * format: A char to print
+ * Return: 1
+*/
+
+int print_percent (char format)
+{
+	if (format == '%')
+	{
+		write(1, "%", 1);
+		return (1);
+	}
+	return (0);
+}
