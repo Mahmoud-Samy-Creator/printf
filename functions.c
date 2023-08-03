@@ -58,10 +58,6 @@ int print_statments(char format)
 
 int print_percent(char format)
 {
-	if (format == '%')
-	{
-		write(1, "%", 1);
-		return (1);
-	}
-	return (0);
+	write(1, "%", 1);
+	return (1);
 }
