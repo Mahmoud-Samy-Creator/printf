@@ -41,7 +41,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				print_statments(format[i]);
+				temp[0] = format[i];
+				temp[1] = '\0';
+				write(1, temp, 1);
 				len++;
 			}
 		}
