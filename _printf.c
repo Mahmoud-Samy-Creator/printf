@@ -24,9 +24,8 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				print_char(args);
+				len += print_char(args);
 				i++;
-				len++;
 			}
 			else if (format[i + 1] == '%')
 			{
