@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 {
 	int i = 0, len = 0;
 	va_list args;
-	char temp[2] = "";
 
 	va_start(args, format);
 
@@ -39,9 +38,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				temp[0] = format[i];
-				temp[1] = '\0';
-				write(1, temp, 1);
+				print_statments(format[i]);
 				len++;
 			}
 		}
