@@ -9,8 +9,10 @@
 int _printf(const char *format, ...)
 {
 	size_t i = 0;
+	int len = 0;
 	va_list args;
-	char str[2500] = "", temp[2] = "";
+	char temp[2] = "";
+
 
 	va_start(args, format);
 
@@ -23,34 +25,37 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				strcat(str, print_char(args));
+				print_char(args);
 				i++;
+				len++;
 			}
 			else if (format[i + 1] == 's')
 			{
-				strcat(str, print_str(args));
+				len += print_str(args);
 				i++;
 			}
 			else if (format[i + 1] == '%')
 			{
-				strcat(str, "%");
+				write(1, "%", 1);
 				i++;
+				len++;
 			}
 			else
 			{
 				temp[0] = format[i];
 				temp[1] = '\0';
-				strcat(str, temp);
+				write(1, temp, 1);
+				len++;
 			}
 		}
 		else
 		{
 			temp[0] = format[i];
 			temp[1] = '\0';
-			strcat(str, temp);
+			write(1, temp, 1);
+			len++;
 		}
 	}
 	va_end(args);
-	write(1, str, strlen(str));
-	return (strlen(str));
+	return (len);
 }
