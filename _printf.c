@@ -48,8 +48,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			print_statments(format[i]);
-			len++;
+			len += print_statments(format[i]);
 		}
 	}
 	va_end(args);
