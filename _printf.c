@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				len += print_char(args);
+				print_char(args, &len);
 				i++;
 			}
 			else if (format[i + 1] == '%')
