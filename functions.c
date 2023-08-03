@@ -5,17 +5,11 @@
  * @args: argument list
  * Return: string
  */
-char *print_char(va_list args)
+int print_char(va_list args)
 {
-	char *ch = malloc(2);
+	putchar(va_arg(args, int));
 
-	if (ch == NULL)
-		return (NULL);
-
-	ch[0] = va_arg(args, int);
-	ch[1] = '\0';
-
-	return (ch);
+	return (1);
 }
 
 /**
@@ -23,12 +17,17 @@ char *print_char(va_list args)
  * @args: argument list
  * Return: string
  */
-char *print_str(va_list args)
+int print_str(va_list args)
 {
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
-		return ("(null)");
+		{
+			write(1, "(null)", 6);
+			return (6);
+		}
+	
+	write(1, str, strlen(str));
 
-	return (str);
+	return (strlen(str));
 }
