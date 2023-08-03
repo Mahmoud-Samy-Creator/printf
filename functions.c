@@ -56,7 +56,7 @@ int print_statments(char format)
  * Return: 1
 */
 
-int print_percent (char format)
+int print_percent(char format)
 {
 	if (format == '%')
 	{
