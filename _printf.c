@@ -37,10 +37,7 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			else
-			{
-				print_statments(format[i]);
-				len++;
-			}
+				len += print_statments(format[i]);
 		}
 		else
 			len += print_statments(format[i]);
