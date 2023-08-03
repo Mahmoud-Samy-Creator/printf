@@ -23,15 +23,15 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i + 1] == 'c')
+			if (format[i] == 'c')
 				len += print_char(args);
 
-			else if (format[i + 1] == '%')
+			else if (format[i] == '%')
 			{
 				write(1, "%", 1);
 				len++;
 			}
-			else if (format[i + 1] == 's')
+			else if (format[i] == 's')
 				len += print_str(args);
 
 			else
