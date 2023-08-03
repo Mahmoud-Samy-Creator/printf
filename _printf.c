@@ -8,8 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	size_t i = 0;
-	int len = 0;
+	int i = 0, len = 0;
 	va_list args;
 	char temp[2] = "";
 
@@ -47,9 +46,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-		{
 			len += print_statments(format[i]);
-		}
 	}
 	va_end(args);
 	return (len);
