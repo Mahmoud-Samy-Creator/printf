@@ -5,13 +5,12 @@
  * @args: argument list
  * Return: string
  */
-int print_char(va_list args, int *len)
+int print_char(va_list args)
 {
 	char temp[2] = "";
 
 	temp[0] = va_arg(args, int);
 	temp[1] = '\0';
-	len++;
 	write(1, temp, 1);
 	return (1);
 }
