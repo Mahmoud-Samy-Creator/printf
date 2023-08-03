@@ -52,7 +52,7 @@ int print_statments(char format)
 
 /**
  * print_percent - A function for handling persent
- * format: A char to print
+ * @format: A char to print
  * Return: 1
 */
 
