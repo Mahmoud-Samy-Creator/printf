@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int print_char(va_list args, int *i);
+int print_char(va_list args);
 int print_str(va_list args);
 int print_statments(char format);
 int print_percent(char format);
