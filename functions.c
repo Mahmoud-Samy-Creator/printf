@@ -42,6 +42,7 @@ int print_str(va_list args, int *i)
 /**
  * print_statments - A function for printing a statment
  * @format: a char to print
+ * @len: pointer to length
  * Return:1
  */
 
