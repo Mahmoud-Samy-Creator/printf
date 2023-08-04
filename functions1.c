@@ -31,6 +31,8 @@ int print_int(va_list args, int *i, int *len)
 
 	if (integer < 0)
 	{
+		write(1, "-", 1);
+		(*len)++;
 		integer = -integer;
 		temp = -temp;
 	}
@@ -57,14 +59,7 @@ int print_int(va_list args, int *i, int *len)
 	}
 	string[j] = '\0';
 
-	if (final < 0)
-	{
-		write(1, "-", 1);
-		write(1, string, digit);
-		(*i)++;
-		(*len) = (*len) + 1 + digit;
-		return (1);
-	}
+
 	write(1, string, digit);
 	(*i)++;
 	(*len) += strlen(string);
