@@ -60,13 +60,15 @@ int print_statments(char format, int *len)
 /**
  * print_percent - A function to write %
  * @i: pointer to counter
+ * @len: pointer to length
  * Return: 1
 */
 
-int print_percent(int *i)
+int print_percent(int *i, int *len)
 {
 	write(1, "%", 1);
 	(*i)++;
+	(*len)++;
 	return (1);
 }
 
