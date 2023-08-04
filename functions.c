@@ -3,6 +3,7 @@
 /**
  * print_char - A function return a string of a character
  * @args: argument list
+ * @i: pointer to counter
  * Return: string
  */
 int print_char(va_list args, int *i)
