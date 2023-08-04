@@ -24,8 +24,10 @@ int _printf(const char *format, ...)
 				len += print_char(args, &i);
 
 			else if (format[i + 1] == '%')
-				len += print_percent(format[i + 1], &i);
-
+			{
+				len += write(1, "%", 1);
+				i++;
+			}
 			else if (format[i + 1] == 's')
 				len += print_str(args, &i);
 
