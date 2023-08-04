@@ -45,13 +45,14 @@ int print_str(va_list args, int *i)
  * Return:1
  */
 
-int print_statments(char format)
+int print_statments(char format, int *len)
 {
 	char temp[2] = "";
 
 	temp[0] = format;
 	temp[1] = '\0';
 	write(1, temp, 1);
+	(*len)++;
 	return (1);
 }
 

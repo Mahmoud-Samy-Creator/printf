@@ -30,10 +30,10 @@ int _printf(const char *format, ...)
 				len += print_str(args, &i);
 
 			else
-				len += print_statments(format[i]);
+				print_statments(format[i], &len);
 		}
 		else
-			len += print_statments(format[i]);
+			print_statments(format[i], &len);
 	}
 	va_end(args);
 	return (len);
