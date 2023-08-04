@@ -54,3 +54,18 @@ int print_statments(char format)
 	write(1, temp, 1);
 	return (1);
 }
+
+/**
+ * print_percent - A function to write %
+ * @i: pointer to counter
+ * Return: 1
+*/
+
+int print_percent(int *i)
+{
+	write(1, "%", 1);
+	(*i)++;
+	return (1);
+}
+
+
