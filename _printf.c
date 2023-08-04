@@ -29,10 +29,8 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			else if (format[i + 1] == 's')
-			{
-				len += print_str(args);
-				i++;
-			}
+				len += print_str(args, &i);
+
 			else
 				len += print_statments(format[i]);
 		}
