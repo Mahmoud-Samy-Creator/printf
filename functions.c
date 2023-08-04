@@ -20,9 +20,10 @@ int print_char(va_list args, int *i)
 /**
  * print_str - A function return a string
  * @args: argument list
+ * @i: pointer to counter
  * Return: string
  */
-int print_str(va_list args)
+int print_str(va_list args, int *i)
 {
 	char *str = va_arg(args, char *);
 
@@ -33,7 +34,7 @@ int print_str(va_list args)
 	}
 
 	write(1, str, strlen(str));
-
+	(*i)++;
 	return (strlen(str));
 }
 
