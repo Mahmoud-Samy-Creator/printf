@@ -21,9 +21,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == 'c')
-			{
 				len += print_char(args, &i);
-			}
+
 			else if (format[i + 1] == '%')
 			{
 				len += write(1, "%", 1);
