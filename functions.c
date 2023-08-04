@@ -54,3 +54,21 @@ int print_statments(char format)
 	write(1, temp, 1);
 	return (1);
 }
+
+/**
+ * print_percent - A function to print the % symbol
+ * @percent: the character to print
+ * @i: a poiinter to counter
+ * Return: 1
+*/
+
+int print_percent(char percent, int *i)
+{
+	char temp[2] = "";
+
+	temp[0] = '%';
+	temp[1] = '\0';
+	write(1, temp, 1);
+	(*i)++;
+	return (1);
+}
