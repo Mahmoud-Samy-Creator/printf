@@ -21,11 +21,18 @@ int print_int(va_list args, int *i, int *len)
 		(*i)++;
 		return (1);
 	}
+	if (integer == INT_MIN)
+	{
+		write(1, "-2147483648", 11);
+		(*len) = (*len) + 11;
+		(*i)++;
+		return (1);
+	}
 
 	if (integer < 0)
 	{
-		integer *= (-1);
-		temp *= (-1);
+		integer = -integer;
+		temp = -temp;
 	}
 	while (integer != 0)
 	{
@@ -33,31 +40,32 @@ int print_int(va_list args, int *i, int *len)
 		digit++;
 	}
 	integer = temp;
-	str = malloc(digit);
-	string = malloc(digit);
+	str = malloc(digit + 1);
+	string = malloc(digit + 1);
 	for (k = 0 ; k < digit ; k++)
 	{
 		integer %= 10;
 		temp /= 10;
-		str[k] = integer + 48;
+		str[k] = integer + '0';
 		integer = temp;
 	}
-
+	str[k] = '\0';
 	while (k--)
 	{
 		string[j] = str[k];
 		j++;
 	}
+	string[j] = '\0';
 
 	if (final < 0)
 	{
 		write(1, "-", 1);
-		write(1, string, strlen(string));
+		write(1, string, digit);
 		(*i)++;
-		(*len) = (*len) + 1 + strlen(string);
+		(*len) = (*len) + 1 + digit;
 		return (1);
 	}
-	write(1, string, strlen(string));
+	write(1, string, digit);
 	(*i)++;
 	(*len) += strlen(string);
 	free(str);
