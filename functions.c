@@ -30,6 +30,7 @@ int print_str(va_list args, int *i)
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
+		(*i)++;
 		return (6);
 	}
 
