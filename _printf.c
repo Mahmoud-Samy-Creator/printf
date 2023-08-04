@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 				print_percent(&i, &len);
 
 			else if (format[i + 1] == 's')
-				len += print_str(args, &i);
+				print_str(args, &i, &len);
 
 			else
 				print_statments(format[i], &len);
