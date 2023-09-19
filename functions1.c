@@ -65,10 +65,8 @@ int print_int(va_list args, int *i, int *len)
 		return (print_zero_and_INTMAX(&(*i), &(*len), integer));
 
 	if (integer < 0)
-	{
-		integer = -integer;
-		temp = -temp;
-	}
+		change_sign(&integer, &temp);
+
 	while (integer != 0)
 	{
 		integer /= 10;

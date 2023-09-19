@@ -23,4 +23,7 @@ int print_max_int(int *i, int *len);
 unsigned long int print_unsigned_int(va_list args, int *i, int *len);
 int print_zero_and_INTMAX(int *i, int *len, int integer);
 
+/* functions2.c */
+void change_sign(int *integer, int *temp);
+
 #endif
