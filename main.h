@@ -14,5 +14,6 @@ int print_str(va_list args, int *i, int *len);
 int print_statments(char format, int *len);
 int print_percent(int *i, int *len);
 int print_int(va_list args, int *i, int *len);
+unsigned long int print_in(va_list args, int *i, int *len);
 
 #endif
