@@ -28,12 +28,8 @@ int _printf(const char *format, ...)
 
 			else if (format[i + 1] == 's')
 				print_str(args, &i, &len);
-
 			else if (format[i + 1] == 'd')
 				print_int(args, &i, &len);
-
-			else if (format[i + 1] == 'i')
-				print_unsigned_int(args, &i, &len);
 
 			else
 				print_statments(format[i], &len);
