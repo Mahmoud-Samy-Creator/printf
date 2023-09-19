@@ -18,9 +18,9 @@ void change_sign(int *integer, int *temp)
  * @string: 1st string to free
  * @str: 2nd string to free
  * Return: void
-*/
+ */
 void free_statments(char *string, char *str)
 {
-    free(str);
-    free(string);
+	free(str);
+	free(string);
 }
