@@ -98,6 +98,8 @@ int print_int(va_list args, int *i, int *len)
 		write(1, string, digit);
 		(*i)++;
 		(*len) = (*len) + 1 + digit;
+		free(str);
+		free(string);
 		return (1);
 	}
 	write(1, string, digit);
