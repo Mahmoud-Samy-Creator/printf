@@ -14,6 +14,22 @@ int print_zero(int *i, int *len)
 	(*i)++;
 	return (1);
 }
+
+/**
+ * print_max_int -  A function to write INT_MAX at stdout
+ * @len: Statment length
+ * @i: Statment counter
+ * Return: 1
+*/
+int print_max_int(int *i, int *len)
+{
+
+	write(1, "-2147483648", 11);
+	(*len) = (*len) + 11;
+	(*i)++;
+	return (1);
+}
+
 /**
  * print_int - A function to print integers
  * @args: list of arguments
@@ -32,12 +48,7 @@ int print_int(va_list args, int *i, int *len)
 		return (print_zero(&(*i), &(*len)));
 
 	if (integer == INT_MIN)
-	{
-		write(1, "-2147483648", 11);
-		(*len) = (*len) + 11;
-		(*i)++;
-		return (1);
-	}
+		return (print_max_int(&(*i), &(*len)));
 
 	if (integer < 0)
 	{
