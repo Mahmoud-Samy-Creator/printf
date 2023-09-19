@@ -108,6 +108,14 @@ int print_int(va_list args, int *i, int *len)
 	return (1);
 }
 
+
+/**
+ * print_unsigned_int - A function to print integers
+ * @args: list of arguments
+ * @i: pointer to counter
+ * @len: pointer to length
+ * Return: 1
+ */
 unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 {
 	int integer = va_arg(args, int);
