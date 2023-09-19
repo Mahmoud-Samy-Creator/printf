@@ -6,7 +6,6 @@
  * @i: Statment counter
  * Return: 1
 */
-
 int print_zero(int *i, int *len)
 {
 	write(1, "0", 1);
@@ -115,11 +114,8 @@ unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 	int k = 0, j = 0, digit = 0, temp = integer, final = integer;
 	char *str, *string;
 
-	if (integer == 0)
-		return (print_zero(&(*i), &(*len)));
-
-	if (integer == INT_MIN)
-		return (print_max_int(&(*i), &(*len)));
+	if (integer == 0 || integer == INT_MIN)
+		return (print_zero_and_INTMAX(&(*i), &(*len), integer));
 
 	if (integer < 0)
 	{
