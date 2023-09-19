@@ -96,18 +96,15 @@ int print_int(va_list args, int *i, int *len)
 		write(1, string, digit);
 		(*i)++;
 		(*len) = (*len) + 1 + digit;
-		free(str);
-		free(string);
+		free_statments(string, str);
 		return (1);
 	}
 	write(1, string, digit);
 	(*i)++;
 	(*len) += strlen(string);
-	free(str);
-	free(string);
+	free_statments(string, str);
 	return (1);
 }
-
 
 /**
  * print_unsigned_int - A function to print integers
@@ -159,14 +156,12 @@ unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 		write(1, string, digit);
 		(*i)++;
 		(*len) = (*len) + 1 + digit;
-		free(str);
-		free(string);
+		free_statments(string, str);
 		return (1);
 	}
 	write(1, string, digit);
 	(*i)++;
 	(*len) += strlen(string);
-	free(str);
-	free(string);
+	free_statments(string, str);
 	return (1);
 }
