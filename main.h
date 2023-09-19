@@ -16,5 +16,6 @@ int print_percent(int *i, int *len);
 int print_int(va_list args, int *i, int *len);
 int print_zero(int *i, int *len);
 int print_max_int(int *i, int *len);
+unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 
 #endif
