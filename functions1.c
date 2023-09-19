@@ -31,24 +31,39 @@ int print_max_int(int *i, int *len)
 }
 
 /**
+ * print_zero_and_INTMAX - printing zero or INT_MAX to stdout
+ * @len: Statment length
+ * @i: Statment counter
+ * @integer: Number to compare it's status
+ * Return: 1
+*/
+int print_zero_and_INTMAX(int *i, int *len, int integer)
+{
+	if (integer == 0)
+		return (print_zero(&(*i), &(*len)));
+
+	if (integer == INT_MIN)
+		return (print_max_int(&(*i), &(*len)));
+
+	else
+		return (0);
+}
+
+/**
  * print_int - A function to print integers
  * @args: list of arguments
  * @i: pointer to counter
  * @len: pointer to length
  * Return: 1
  */
-
 int print_int(va_list args, int *i, int *len)
 {
 	int integer = va_arg(args, int);
 	int k = 0, j = 0, digit = 0, temp = integer, final = integer;
 	char *str, *string;
 
-	if (integer == 0)
-		return (print_zero(&(*i), &(*len)));
-
-	if (integer == INT_MIN)
-		return (print_max_int(&(*i), &(*len)));
+	if (integer == 0 || integer == INT_MIN)
+		return (print_zero_and_INTMAX(&(*i), &(*len), integer));
 
 	if (integer < 0)
 	{
