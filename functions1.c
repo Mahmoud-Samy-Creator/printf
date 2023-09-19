@@ -83,11 +83,8 @@ int print_int(va_list args, int *i, int *len)
 		integer = temp;
 	}
 	str[k] = '\0';
-	while (k--)
-	{
-		string[j] = str[k];
-		j++;
-	}
+	/* Here we reverse the string */
+	string_reverse(&j, &k, string, str);
 	string[j] = '\0';
 
 	if (final < 0)

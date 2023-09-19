@@ -22,3 +22,11 @@ int main(void)
 	}
 	return (0);
 }
+
+/*
+while (k--)
+{
+	string[j] = str[k];
+	j++;
+}
+*/

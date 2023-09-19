@@ -24,3 +24,19 @@ void free_statments(char *string, char *str)
 	free(str);
 	free(string);
 }
+
+/**
+ * string_reverse - A function to reverse a string
+ * @j: A counter
+ * @k: A counter
+ * @string: dist string
+ * @str: src string
+*/
+void string_reverse(int *j, int *k, char *string, char *str)
+{
+    while ((*k)--)
+	{
+		string[(*j)] = str[(*k)];
+		(*j)++;
+	}
+}
