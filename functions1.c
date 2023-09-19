@@ -1,6 +1,20 @@
 #include "main.h"
 
 /**
+ * print_zero -  A function to write "0" at stdout
+ * @len: Statment length
+ * @i: Statment counter
+ * Return: 1
+*/
+
+int print_zero(int *i, int *len)
+{
+	write(1, "0", 1);
+	(*len)++;
+	(*i)++;
+	return (1);
+}
+/**
  * print_int - A function to print integers
  * @args: list of arguments
  * @i: pointer to counter
@@ -15,12 +29,8 @@ int print_int(va_list args, int *i, int *len)
 	char *str, *string;
 
 	if (integer == 0)
-	{
-		write(1, "0", 1);
-		(*len)++;
-		(*i)++;
-		return (1);
-	}
+		return (print_zero(&(*i), &(*len)));
+
 	if (integer == INT_MIN)
 	{
 		write(1, "-2147483648", 11);
