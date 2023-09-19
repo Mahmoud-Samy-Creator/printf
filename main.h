@@ -27,5 +27,6 @@ int print_zero_and_INTMAX(int *i, int *len, int integer);
 void change_sign(int *integer, int *temp);
 void free_statments(char *string, char *str);
 void string_reverse(int *j, int *k, char *string, char *str);
+void number_len(int *integer, int *digit);
 
 #endif

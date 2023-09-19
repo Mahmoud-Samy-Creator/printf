@@ -40,3 +40,17 @@ void string_reverse(int *j, int *k, char *string, char *str)
 		(*j)++;
 	}
 }
+
+/**
+ * number_len -  A function to determine the number digit len
+ * @integer: The number to determine it's len
+ * @digit: A number len counter
+ */
+void number_len(int *integer, int *digit)
+{
+	while ((*integer) != 0)
+	{
+		(*integer) /= 10;
+		(*digit)++;
+	}
+}

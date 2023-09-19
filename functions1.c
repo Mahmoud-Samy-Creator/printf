@@ -67,11 +67,8 @@ int print_int(va_list args, int *i, int *len)
 	if (integer < 0)
 		change_sign(&integer, &temp);
 
-	while (integer != 0)
-	{
-		integer /= 10;
-		digit++;
-	}
+	/* Here we know the number digit len */
+	number_len(&integer, &digit);
 	integer = temp;
 	str = malloc(digit + 1);
 	string = malloc(digit + 1);
