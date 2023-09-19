@@ -12,10 +12,8 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-
 	for (i = 0 ; format[i] ; i++)
 	{
 		if (format[i] == '%')
@@ -30,7 +28,6 @@ int _printf(const char *format, ...)
 				print_str(args, &i, &len);
 			else if (format[i + 1] == 'd')
 				print_int(args, &i, &len);
-
 			else
 				print_statments(format[i], &len);
 		}
