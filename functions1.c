@@ -118,11 +118,7 @@ unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 	if (integer < 0)
 		change_sign(&integer, &temp);
 
-	while (integer != 0)
-	{
-		integer /= 10;
-		digit++;
-	}
+	number_len(&integer, &digit);
 	integer = temp;
 	str = malloc(digit + 1);
 	string = malloc(digit + 1);
