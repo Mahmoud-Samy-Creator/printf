@@ -50,7 +50,6 @@ int print_str(va_list args, int *i, int *len)
  * @len: pointer to length
  * Return:1
  */
-
 int print_statments(char format, int *len)
 {
 	char temp[2] = "";
@@ -68,7 +67,6 @@ int print_statments(char format, int *len)
  * @len: pointer to length
  * Return: 1
 */
-
 int print_percent(int *i, int *len)
 {
 	write(1, "%", 1);
