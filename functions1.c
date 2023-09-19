@@ -83,7 +83,6 @@ int print_int(va_list args, int *i, int *len)
 		integer = temp;
 	}
 	str[k] = '\0';
-	/* Here we reverse the string */
 	string_reverse(&j, &k, string, str);
 	string[j] = '\0';
 
@@ -120,10 +119,8 @@ unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 		return (print_zero_and_INTMAX(&(*i), &(*len), integer));
 
 	if (integer < 0)
-	{
-		integer = -integer;
-		temp = -temp;
-	}
+		change_sign(&integer, &temp);
+
 	while (integer != 0)
 	{
 		integer /= 10;
@@ -140,11 +137,7 @@ unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 		integer = temp;
 	}
 	str[k] = '\0';
-	while (k--)
-	{
-		string[j] = str[k];
-		j++;
-	}
+	string_reverse(&j, &k, string, str);
 	string[j] = '\0';
 
 	if (final < 0)
