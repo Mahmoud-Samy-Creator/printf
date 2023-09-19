@@ -6,6 +6,7 @@
  * @i: Statment counter
  * Return: 1
 */
+
 int print_zero(int *i, int *len)
 {
 	write(1, "0", 1);
@@ -93,18 +94,10 @@ int print_int(va_list args, int *i, int *len)
 	return (1);
 }
 
-/**
- * print_unsigned_int - A function to print integers
- * @args: list of arguments
- * @i: pointer to counter
- * @len: pointer to length
- * Return: 1
- */
-
 unsigned long int print_unsigned_int(va_list args, int *i, int *len)
 {
-	unsigned long int integer = va_arg(args, int);
-	unsigned long int k = 0, j = 0, digit = 0, temp = integer, final = integer;
+	int integer = va_arg(args, int);
+	int k = 0, j = 0, digit = 0, temp = integer, final = integer;
 	char *str, *string;
 
 	if (integer == 0)
