@@ -31,10 +31,10 @@ void free_statments(char *string, char *str)
  * @k: A counter
  * @string: dist string
  * @str: src string
-*/
+ */
 void string_reverse(int *j, int *k, char *string, char *str)
 {
-    while ((*k)--)
+	while ((*k)--)
 	{
 		string[(*j)] = str[(*k)];
 		(*j)++;
