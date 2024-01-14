@@ -1,19 +1,5 @@
 #include "main.h"
 
-/**
- * print_max_int -  A function to write INT_MAX at stdout
- * @len: Statment length
- * @i: Statment counter
- * Return: 1
-*/
-int print_max_int(int *i, int *len)
-{
-
-	write(1, "-2147483648", 11);
-	(*len) = (*len) + 11;
-	(*i)++;
-	return (1);
-}
 
 /**
  * print_zero_and_INTMAX - printing zero or INT_MAX to stdout
