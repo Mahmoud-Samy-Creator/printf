@@ -9,7 +9,8 @@
  */
 void print_char(va_list args, int *i, int *len)
 {
-	putchar(va_arg(args, int));
+	_putchar(va_arg(args, int));
+
 	/*
 	char temp[2] = "";
 
@@ -17,6 +18,7 @@ void print_char(va_list args, int *i, int *len)
 	temp[1] = '\0';
 	write(1, temp, 1);
 	*/
+	
 	(*i)++;
 	(*len)++;
 }
