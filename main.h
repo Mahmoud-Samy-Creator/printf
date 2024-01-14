@@ -18,10 +18,10 @@ void print_statments(char format, int *len);
 void print_percent(int *i, int *len);
 
 /* functions1.c */
-int print_int(va_list args, int *i, int *len);
-int print_max_int(int *i, int *len);
-int print_unsigned_int(va_list args, int *i, int *len);
 int print_zero_and_INTMAX(int *i, int *len, int integer);
+int print_int(va_list args, int *i, int *len);
+int print_unsigned_int(va_list args, int *i, int *len);
+
 
 /* functions2.c */
 void change_sign(int *integer, int *temp);
