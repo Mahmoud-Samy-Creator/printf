@@ -29,6 +29,7 @@ int print_zero_and_INTMAX(int *i, int *len, int integer)
 		putchar('0');
 		(*len)++;
 		(*i)++;
+		return (0);
 	}
 
 	if (integer == INT_MIN)
@@ -36,8 +37,8 @@ int print_zero_and_INTMAX(int *i, int *len, int integer)
 		write(1, "-2147483648", 11);
 		(*len) = (*len) + 11;
 		(*i)++;
+		return (0);
 	}
-
 	else
 		return (0);
 }
