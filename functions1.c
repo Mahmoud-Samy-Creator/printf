@@ -32,7 +32,11 @@ int print_zero_and_INTMAX(int *i, int *len, int integer)
 	}
 
 	if (integer == INT_MIN)
-		return (print_max_int(&(*i), &(*len)));
+	{
+		write(1, "-2147483648", 11);
+		(*len) = (*len) + 11;
+		(*i)++;
+	}
 
 	else
 		return (0);
