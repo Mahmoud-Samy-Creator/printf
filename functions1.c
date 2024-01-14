@@ -106,7 +106,7 @@ int print_int(va_list args, int *i, int *len)
  * @len: pointer to length
  * Return: 1
  */
-unsigned long int print_unsigned_int(va_list args, int *i, int *len)
+int print_unsigned_int(va_list args, int *i, int *len)
 {
 	int integer = va_arg(args, int);
 	int k = 0, j = 0, digit = 0, temp = integer, final = integer;
