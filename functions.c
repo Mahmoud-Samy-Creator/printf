@@ -9,11 +9,14 @@
  */
 void print_char(va_list args, int *i, int *len)
 {
+	putchar(va_arg(args, int));
+	/*
 	char temp[2] = "";
 
 	temp[0] = va_arg(args, int);
 	temp[1] = '\0';
 	write(1, temp, 1);
+	*/
 	(*i)++;
 	(*len)++;
 }
