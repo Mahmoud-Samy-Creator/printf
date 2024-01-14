@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * print_zero_and_INTMAX - printing zero or INT_MAX to stdout
  * @len: Statment length
@@ -8,13 +7,14 @@
  * @integer: Number to compare it's status
  * Return: 1
 */
-void print_zero_and_INTMAX(int *i, int *len, int integer)
+int print_zero_and_INTMAX(int *i, int *len, int integer)
 {
 	if (integer == 0)
 	{
 		putchar('0');
 		(*len)++;
 		(*i)++;
+		return (0);
 	}
 
 	if (integer == INT_MIN)
@@ -22,7 +22,10 @@ void print_zero_and_INTMAX(int *i, int *len, int integer)
 		write(1, "-2147483648", 11);
 		(*len) = (*len) + 11;
 		(*i)++;
+		return (0);
 	}
+	else
+		return (0);
 }
 
 /**
@@ -39,7 +42,7 @@ int print_int(va_list args, int *i, int *len)
 	char *str, *string;
 
 	if (integer == 0 || integer == INT_MIN)
-		print_zero_and_INTMAX(&(*i), &(*len), integer);
+		return (print_zero_and_INTMAX(&(*i), &(*len), integer));
 
 	if (integer < 0)
 		change_sign(&integer, &temp);
@@ -90,7 +93,7 @@ int print_unsigned_int(va_list args, int *i, int *len)
 	char *str, *string;
 
 	if (integer == 0 || integer == INT_MIN)
-		print_zero_and_INTMAX(&(*i), &(*len), integer);
+		return (print_zero_and_INTMAX(&(*i), &(*len), integer));
 
 	if (integer < 0)
 		change_sign(&integer, &temp);
