@@ -1,19 +1,6 @@
 #include "main.h"
 
 /**
- * print_zero -  A function to write "0" at stdout
- * @len: Statment length
- * @i: Statment counter
- * Return: 1
-*/
-void print_zero(int *i, int *len)
-{
-	_putchar('0');
-	(*len)++;
-	(*i)++;
-}
-
-/**
  * print_max_int -  A function to write INT_MAX at stdout
  * @len: Statment length
  * @i: Statment counter
