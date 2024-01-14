@@ -63,7 +63,7 @@ void print_statments(char format, int *len)
 */
 void print_percent(int *i, int *len)
 {
-	write(1, "%", 1);
+	_putchar('%');
 	(*i)++;
 	(*len)++;
 }
