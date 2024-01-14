@@ -30,13 +30,13 @@ void print_str(va_list args, int *i, int *len)
 		write(1, "(null)", 6);
 		(*i)++;
 		(*len) += 6;
-		return;
 	}
-
-	write(1, str, strlen(str));
-	(*i)++;
-	(*len) += strlen(str);
-	return;
+	else
+	{
+		write(1, str, strlen(str));
+		(*i)++;
+		(*len) += strlen(str);
+	}
 }
 
 /**
