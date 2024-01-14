@@ -21,7 +21,7 @@ void print_char(va_list args, int *i, int *len)
  * @len: pointer to length
  * Return: string
  */
-int print_str(va_list args, int *i, int *len)
+void print_str(va_list args, int *i, int *len)
 {
 	char *str = va_arg(args, char *);
 
@@ -30,13 +30,13 @@ int print_str(va_list args, int *i, int *len)
 		write(1, "(null)", 6);
 		(*i)++;
 		(*len) += 6;
-		return (1);
+		return;
 	}
 
 	write(1, str, strlen(str));
 	(*i)++;
 	(*len) += strlen(str);
-	return (1);
+	return;
 }
 
 /**

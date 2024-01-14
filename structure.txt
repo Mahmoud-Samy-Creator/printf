@@ -1,0 +1,9 @@
+/*
+	id_var id[] = {
+		{'c', print_char},
+		{'%', print_percent},
+		{'s', print_str},
+		{'d', print_int},
+		{'i', print_unsigned_int}
+	}
+*/
