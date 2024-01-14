@@ -7,7 +7,7 @@
  * @len: pointer to length
  * Return: string
  */
-void print_char(va_list args, int *i, int *len)
+void print_char(va_list args, int *len)
 {
 	_putchar(va_arg(args, int));
 	(*len)++;
