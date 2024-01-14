@@ -8,7 +8,7 @@
 */
 void print_zero(int *i, int *len)
 {
-	write(1, "0", 1);
+	_putchar('0');
 	(*len)++;
 	(*i)++;
 }
