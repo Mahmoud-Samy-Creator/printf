@@ -38,7 +38,11 @@ int print_max_int(int *i, int *len)
 int print_zero_and_INTMAX(int *i, int *len, int integer)
 {
 	if (integer == 0)
-		print_zero(&(*i), &(*len));
+	{
+		putchar('0');
+		(*len)++;
+		(*i)++;
+	}
 
 	if (integer == INT_MIN)
 		return (print_max_int(&(*i), &(*len)));
