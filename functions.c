@@ -49,7 +49,7 @@ int print_str(va_list args, int *i, int *len)
  * @len: pointer to length
  * Return:1
  */
-int print_statments(char format, int *len)
+void print_statments(char format, int *len)
 {
 	char temp[2] = "";
 
@@ -57,7 +57,6 @@ int print_statments(char format, int *len)
 	temp[1] = '\0';
 	write(1, temp, 1);
 	(*len)++;
-	return (1);
 }
 
 /**
