@@ -10,6 +10,7 @@
 void print_char(va_list args, int *i, int *len)
 {
 	_putchar(va_arg(args, int));
+	(*i)++;
 	(*len)++;
 }
 
