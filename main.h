@@ -12,7 +12,7 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 
 /* functions.c */
-void print_char(va_list args, int *len);
+void print_char(va_list args, int *i, int *len);
 void print_str(va_list args, int *i, int *len);
 void print_statments(char format, int *len);
 void print_percent(int *i, int *len);
