@@ -6,12 +6,11 @@
  * @i: Statment counter
  * Return: 1
 */
-int print_zero(int *i, int *len)
+void print_zero(int *i, int *len)
 {
 	write(1, "0", 1);
 	(*len)++;
 	(*i)++;
-	return (1);
 }
 
 /**
